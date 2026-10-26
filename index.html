@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaGrabber HD - Free Multi-Platform Video Downloader</title>
+    <!-- Google AdSense Ownership Verification Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3856900133978039"
+     crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ad-slot {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans">
+    
+    <!-- Navigation Bar -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tight">MediaGrabber <span class="gradient-text">HD</span></span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <button onclick="openModal('adsense-modal')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 transition flex items-center gap-2">
+                    <i class="fa-solid fa-[#0F9D58] fa-rectangle-ad"></i> AdSense Config
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Header AdSense Container -->
+    <div class="max-w-7xl mx-auto px-4 mt-4 w-full">
+        <div class="ad-slot rounded-xl p-3 text-center text-xs text-slate-500 min-h-[90px] flex items-center justify-center">
+            <!-- Google AdSense - Leaderboard Slot -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3856900133978039"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <span class="ad-placeholder">AdSense Banner Area (Auto-responsive)</span>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
+        
+        <!-- Hero Section -->
+        <div class="text-center space-y-4 mb-8">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight">
+                Download High-Quality Videos <br><span class="gradient-text">Without Watermark</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">
+                Fast, free, and unrestricted multi-platform downloader for TikTok, YouTube, Instagram, CapCut, Twitter, and Facebook.
+            </p>
+        </div>
+
+        <!-- URL Input & Platform Detection Box -->
+        <div class="glass-panel p-6 md:p-8 rounded-3xl shadow-2xl space-y-6">
+            <form id="downloadForm" onsubmit="processUrl(event)" class="space-y-4">
+                <div class="relative">
+                    <input type="url" id="videoUrl" required placeholder="Paste video link here (e.g. TikTok, YouTube, Instagram, CapCut)..." 
+                           class="w-full pl-5 pr-32 py-4 bg-slate-900/90 border border-slate-700 focus:border-indigo-500 rounded-2xl outline-none text-slate-100 placeholder-slate-500 transition text-sm md:text-base">
+                    <button type="submit" class="absolute right-2 top-2 bottom-2 px-6 bg-gradient-to-r from-indigo-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 font-semibold rounded-xl text-white transition shadow-lg shadow-indigo-500/25 flex items-center gap-2">
+                        <span>Fetch</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Platform Icons -->
+            <div class="flex flex-wrap justify-center gap-4 text-slate-400 text-xs">
+                <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/50 border border-slate-800"><i class="fa-brands fa-tiktok text-pink-500"></i> TikTok</span>
+                <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/50 border border-slate-800"><i class="fa-brands fa-youtube text-red-500"></i> YouTube</span>
+                <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/50 border border-slate-800"><i class="fa-brands fa-instagram text-purple-500"></i> Instagram</span>
+                <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/50 border border-slate-800"><i class="fa-solid fa-scissors text-blue-400"></i> CapCut</span>
+                <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/50 border border-slate-800"><i class="fa-brands fa-twitter text-sky-400"></i> Twitter/X</span>
+            </div>
+        </div>
+
+        <!-- Progress Loader -->
+        <div id="loader" class="hidden my-8 text-center space-y-3">
+            <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-indigo-500 border-t-transparent"></div>
+            <p class="text-sm text-slate-400 font-medium">Extracting media links without watermark...</p>
+        </div>
+
+        <!-- Result Card -->
+        <div id="resultCard" class="hidden my-8 glass-panel rounded-3xl p-6 md:p-8 space-y-6">
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="w-full md:w-48 h-48 bg-slate-900 rounded-2xl overflow-hidden flex items-center justify-center relative border border-slate-800">
+                    <i class="fa-solid fa-file-video text-5xl text-indigo-400"></i>
+                    <span id="detectedBadge" class="absolute top-2 left-2 px-2.5 py-1 bg-indigo-600/90 text-[10px] font-bold rounded-full uppercase">TikTok</span>
+                </div>
+                <div class="flex-grow space-y-4 w-full">
+                    <h3 id="videoTitle" class="font-bold text-lg text-slate-100 line-clamp-2">High Quality Video (No Watermark)</h3>
+                    <p class="text-xs text-slate-400">Source: <span id="detectedSource" class="text-slate-200 font-semibold">TikTok</span></p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <a id="dlMp4" href="#" download class="px-4 py-3 bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 rounded-xl text-center text-sm font-semibold text-white transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-download"></i> Download MP4 (HD)
+                        </a>
+                        <a id="dlMp3" href="#" download class="px-4 py-3 bg-slate-800 hover:bg-slate-700 rounded-xl text-center text-sm font-semibold text-slate-200 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-music"></i> Download Audio (MP3)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- In-feed Native Ad Unit -->
+        <div class="my-8">
+            <div class="ad-slot rounded-2xl p-4 text-center text-xs text-slate-500 min-h-[250px] flex items-center justify-center">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-fb+5w+4e-db+86"
+                     data-ad-client="ca-pub-3856900133978039"
+                     data-ad-slot="9876543210"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <span class="ad-placeholder">AdSense Native Feed Unit Area</span>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+            <div class="glass-panel p-6 rounded-2xl space-y-2">
+                <div class="text-indigo-400 text-xl"><i class="fa-solid fa-bolt"></i></div>
+                <h4 class="font-bold text-slate-200">Lightning Fast</h4>
+                <p class="text-xs text-slate-400">Direct download links generated in seconds without processing delay.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl space-y-2">
+                <div class="text-pink-400 text-xl"><i class="fa-solid fa-ban"></i></div>
+                <h4 class="font-bold text-slate-200">No Watermark</h4>
+                <p class="text-xs text-slate-400">Get clean videos from TikTok, CapCut, and Instagram reels without logos.</p>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl space-y-2">
+                <div class="text-purple-400 text-xl"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4 class="font-bold text-slate-200">Safe & Secure</h4>
+                <p class="text-xs text-slate-400">No account required. We never store your downloaded videos or data.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- AdSense Configurator Modal -->
+    <div id="adsense-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel bg-slate-900 border border-slate-800 rounded-3xl p-6 max-w-md w-full space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <h3 class="font-bold text-lg text-slate-100 flex items-center gap-2">
+                    <i class="fa-solid fa-sliders text-indigo-400"></i> AdSense Configurator
+                </h3>
+                <button onclick="closeModal('adsense-modal')" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="block text-slate-400 mb-1">Publisher ID</label>
+                    <input type="text" readonly value="ca-pub-3856900133978039" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-300 font-mono">
+                </div>
+                <div>
+                    <label class="block text-slate-400 mb-1">Top Leaderboard Ad Slot</label>
+                    <input type="text" value="1234567890" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-300 font-mono">
+                </div>
+                <div>
+                    <label class="block text-slate-400 mb-1">In-Feed Native Ad Slot</label>
+                    <input type="text" value="9876543210" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-300 font-mono">
+                </div>
+                <p class="text-[11px] text-slate-500 pt-1">This site contains the AdSense Ownership Verification tag in the header.</p>
+            </div>
+            <button onclick="closeModal('adsense-modal')" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 font-semibold rounded-xl text-white transition text-sm">Save & Apply</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-900/50 py-8 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <p>© 2026 MediaGrabber HD. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 text-slate-400">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">DMCA Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        function processUrl(e) {
+            e.preventDefault();
+            const url = document.getElementById('videoUrl').value.trim();
+            const loader = document.getElementById('loader');
+            const resultCard = document.getElementById('resultCard');
+
+            resultCard.classList.add('hidden');
+            loader.classList.remove('hidden');
+
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                
+                // Platform detection logic
+                let platform = "General Video";
+                if(url.includes("tiktok.com")) platform = "TikTok";
+                else if(url.includes("youtube.com") || url.includes("youtu.be")) platform = "YouTube";
+                else if(url.includes("instagram.com")) platform = "Instagram";
+                else if(url.includes("capcut.com")) platform = "CapCut";
+                else if(url.includes("twitter.com") || url.includes("x.com")) platform = "Twitter/X";
+
+                document.getElementById('detectedBadge').innerText = platform;
+                document.getElementById('detectedSource').innerText = platform;
+                document.getElementById('videoTitle').innerText = platform + " Downloadable Video (No Watermark)";
+                
+                resultCard.classList.remove('hidden');
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
